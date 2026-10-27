@@ -1,4 +1,4 @@
-# Overview: Pixelated Color Picker
+# Highlights: Pixelated Color Picker
 
 **Live site:** [jg3012736.github.io/color-explorer](https://jg3012736.github.io/color-explorer/)
 
