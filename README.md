@@ -1,3 +1,5 @@
+# Overview: Pixelated Color Picker
+
 **Live site:** [jg3012736.github.io/color-explorer](https://jg3012736.github.io/color-explorer/)
 
 * **Built with:** JavaScript, HTML, CSS, p5.js, Chroma.js
