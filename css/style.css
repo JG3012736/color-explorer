@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+/* Dark/Light Mode Classes */
+/* Dark/Light Mode Classes */
+/* Theme Variables */
+:root {
+    --text-color: #000000;
+    --border-color: #000000;
+    --shadow-color: #000000;
+}
+
+[data-theme="dark"] {
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+    --shadow-color: #ffffff;
+}
+
+[data-theme="light"] {
+    --text-color: #000000;
+    --border-color: #000000;
+    --shadow-color: #000000;
+}
+
+/* Update body to use CSS variables by default */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Pixelify Sans', cursive;
+    color: var(--text-color);
+}
+
+#p5-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Input Button Styling on HomePage */
+.color-input {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    padding: 16px;
+    font-size: 14px;
+    border-radius: 0;
+    border: 4px solid var(--border-color, #000);
+    text-align: center;
+    background: #fff;
+    z-index: 100;
+    font-family: 'Pixelify Sans', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--shadow-color, #000);
+    transition: all 0.2s ease;
+    color: var(--text-color, #000);
+}
+
+
+.color-input:hover {
+    transform: translate(-50%, -50%) translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--shadow-color, #000);
+}
+
+.color-input:focus {
+    outline: none;
+    border-color: var(--border-color, #000);
+    box-shadow: 8px 8px 0 var(--shadow-color, #000);
+}
+
+/* Refresh Button Styling on Homepage */
+.refresh-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    outline: none;
+}
+
+.refresh-button {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    font-family: 'Pixelify Sans', cursive;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color, #000);
+}
+
+/* Screen reader only class */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Focus indicators for keyboard navigation */
+.color-input:focus,
+.refresh-button:focus {
+    outline: 3px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* Library Button Styling */
+.library-button {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    font-family: 'Pixelify Sans', cursive;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color, #000);
+}
+
+.library-button:hover {
+    transform: scale(1.1);
+}
+
+/* Library Reset Button Styling */
+.library-refresh-button {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    font-family: 'Pixelify Sans', cursive;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color, #000);
+}
+
+.library-refresh-button:hover {
+    transform: scale(1.1);
+}
+
+.refresh-button:hover {
+    transform: scale(1.1);
+}
+
+/* Instructions Styling */
+.typewriter-text {
+    position: absolute;
+    top: 20%;
+    right: 8%;
+    width: 300px;
+    color: var(--text-color, #000);
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 1;
+    text-align: left;
+    transition: all 2s ease-out;
+    z-index: 100;
+}
+
+.typewriter-line-container {
+    position: relative;
+    margin: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.typewriter-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.typewriter-line {
+    position: relative;
+    margin: 0;
+    padding: 4px 8px;
+    z-index: 1;
+}
+
+.typewriter-line-container.visible {
+    opacity: 1;
+    height: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.fade-out {
+    opacity: 0 !important;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 2s ease-out;
+}
