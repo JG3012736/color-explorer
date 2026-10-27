@@ -3,8 +3,9 @@
 **Live site:** [jg3012736.github.io/color-explorer](https://jg3012736.github.io/color-explorer/)
 
 * **Built with:** JavaScript, HTML, CSS, p5.js, Chroma.js
+* **Built on:** Fall 2024 Semester, 4 week duration
 * **Features:** palette generation, a saved color swatch library using local storage, generative animations, and keyboard and screen reader accessibility
-* **Context:** Final project for Programming Usable Interfaces at Carnegie Mellon University (Fall 2024). The full process write-up, from FP4 back to FP1, is below.
+* **Context:** Final project for Programming Usable Interfaces at Carnegie Mellon University. The full process write-up, from FP4 back to FP1, is below.
 
 ![Color Explorer](images/high_UI_home1.png)
 
