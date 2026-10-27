@@ -51,8 +51,6 @@ My website is an interactive color picker that generates colors from complementa
 
 ## Part 4: Design Iteration
 
-![FP4 High-fi Website](images/high_UI_home1.png)
-
 ![FP4 High-fi Website](images/high_UI_home2.png)
 
 ![FP4 High-fi Website](images/high_UI_store.png)
