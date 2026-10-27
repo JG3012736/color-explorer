@@ -1,11 +1,22 @@
-<mark>**Note that this document order from FP4 -> FP1**</mark>
+# Color Explorer
+
+An interactive color picker that generates complementary, monochromatic, triadic, and split complementary palettes from any 6 digit hex code, with a cute, Y2k inspired UI built in p5.js and Chroma.js.
+
+**Live site:** [jg3012736.github.io/color-explorer](https://jg3012736.github.io/color-explorer/)
+
+![Color Explorer](images/high_UI_home1.png)
+
+* **Built with:** JavaScript, HTML, CSS, p5.js, Chroma.js
+* **Features:** palette generation, a saved color swatch library using local storage, generative animations, and keyboard and screen reader accessibility
+* **Context:** Final project for Programming Usable Interfaces at Carnegie Mellon University (Fall 2024). The full process write-up, from FP4 back to FP1, is below.
+
+---
+
+<mark>**Note that this document is ordered from FP4 -> FP1**</mark>
 
 ---
 
 # **FP4 \- Final Project Writeup**
-
-Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) to make your writeup more organized, and you can preview your markdown file in VSCode [Markdown editing with Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview). 
-
 
 ## Part 1: Website Description
 
@@ -13,28 +24,28 @@ My website is an interactive color picker that generates colors from complementa
 
 ## Part 2: User Interaction
 
-2. Click on the input box and enter a 6 digit hex code.
-3. Click on the refresh button at the top left corner to refresh for different color schemes.
-4. Click on the library button at the bottom right corner to navigate to the library page.
-5. Click on any of the shapes to navigate back to the home page with that color's generated palette.
-6. Click on the reset button at the top right corner to refresh all of the shape swatches into blanks again for a new library. 
-7. Click on the back button at the bottom right corner to navigate back to the default home page.
-8. Move your mouse around the library page to see a simple glitch animation in the background.
-9. Use the tab and enter key presses to navigate through both pages using a screen reader for accessiblity. 
+1. Click on the input box and enter a 6 digit hex code.
+2. Click on the refresh button at the top left corner to refresh for different color schemes.
+3. Click on the library button at the bottom right corner to navigate to the library page.
+4. Click on any of the shapes to navigate back to the home page with that color's generated palette.
+5. Click on the reset button at the top right corner to refresh all of the shape swatches into blanks again for a new library. 
+6. Click on the back button at the bottom right corner to navigate back to the default home page.
+7. Move your mouse around the library page to see a simple glitch animation in the background.
+8. Use the tab and enter key presses to navigate through both pages using a screen reader for accessibility. 
 
 ## Part 3: External Tool
 
 1. Javascript library - p5.js
    * This library was made for artists and designers to create compelling graphics with simple arithmetic and geometric functions that are harder to navigate using simple JS. Furthermore, I have a lot of experience with this library so I was comfortable using it.
    * I used it to create both pages in their entirety aside from the buttons, input box, and local storage functionalities. More specifically, I used it to create the gradients, textile like patterns, define organic shapes, and create a glitch like animation for both pages. 
-   * Since my website's focus is colors and how to find a color scheme that amtches a hex code for a color you might already want to include in a project, the overall styling and aesthetic of this website is very important in order to create a convincing space for artists and designers to utilize. Additionally, I wanted the website to also have a fun and whimsical look that I find is lacking in a lot of tech spaces currently. 
+   * Since my website's focus is colors and how to find a color scheme that matches a hex code for a color you might already want to include in a project, the overall styling and aesthetic of this website is very important in order to create a convincing space for artists and designers to utilize. Additionally, I wanted the website to also have a fun and whimsical look that I find is lacking in a lot of tech spaces currently. 
 2. Javascript Library - chroma.js
-   * Chroma.js is a library that utilizes the hue, saturation, and luminence of colors instead of te baked in RGB values that p5.js defaults to. This library also has a very intuitive yet powerful mathematical backing that navigates color in a 3D space, allowing you to create colors on the screen that are not prone to the usual desaturation and muddying that most libararies create. (Please look at the chroma.js documentation for this library to better understand this.)
+   * Chroma.js is a library that utilizes the hue, saturation, and luminance of colors instead of the baked in RGB values that p5.js defaults to. This library also has a very intuitive yet powerful mathematical backing that navigates color in a 3D space, allowing you to create colors on the screen that are not prone to the usual desaturation and muddying that most libraries create. (Please look at the chroma.js documentation for this library to better understand this.)
    * I used chroma.js to first transcribe the hex code color from RGB to the HSL space. Then, I utilized trigonometry to go around a hypothetical color wheel to create the four different color palettes I created: complementary, monochromatic, triadic, and split complementary.
-   * The main theme of my website is creating intersting color spaces that will look good on both the screen and in real life. Utilizing chroma.js allows me to create convincing color schemes that will best match what unique hex codes (that could map to specific pantone paint swatches) will look like in real life against other generated palettes.
+   * The main theme of my website is creating interesting color spaces that will look good on both the screen and in real life. Utilizing chroma.js allows me to create convincing color schemes that will best match what unique hex codes (that could map to specific pantone paint swatches) will look like in real life against other generated palettes.
 3. Animations w. p5.js
    * Since p5.js is so good at creating dynamic animations, I decided to create some dynamic and generative animations that mimic my current creative coding art practice.
-   * This includes a generative background that is stylistically consistent but unique after each user input from the "refresh" button in the home page, a dynaimcally shifting background in the library page, a light up feature for each shape in the library page on mouse hovers, and an instructional animation for how to navigate through both pages when first starting a browser session.
+   * This includes a generative background that is stylistically consistent but unique after each user input from the "refresh" button in the home page, a dynamically shifting background in the library page, a light up feature for each shape in the library page on mouse hovers, and an instructional animation for how to navigate through both pages when first starting a browser session.
    * Again, this adds that same sense of wonder and creativity that I want to be present throughout this website. I wanted this website to not only be functional, but to also work as a source of inspiration, and having dynamic backgrounds and user interactions make the overall user experience more joyous overall. 
 
 
@@ -46,7 +57,7 @@ My website is an interactive color picker that generates colors from complementa
 
 ![FP4 High-fi Website](images/high_UI_store.png)
 
-I completely redid the visual styling from my FP3 prototype. While I had most of the algorithms in place for this website by FP3, including local storage, chroma.js color generation, and multipage functionality, there were two huge problems I had to face. The first problem was my initial problems with Bootstrap, a lot of conflicting aliasing was happening with Bootstrap's library and p5.js's inerface due to how p5.js renders its own canvas that already automatically shifts with dynamic screen sizing. The second problem, while my FP3 design iteration had a clear callback to Pantone paint card swatches as its design inspiration, I felt that it did not truly convey my current art practice and my abilities as a designer. Therefore, I kept all of the necessary algorithms, got rid of Bootstrap entirely, and redid the entire design while still keeping the grid inspiration for my color generation page. I wanted the website to look more like early Y2k inspired gaming systems and also like the patchwork you see on jeans and a lot of textiles during this time. Therefore, I changed the font, created my own cuter organic shapes, and added a lot more generative and animated aspects to the website to properly reflect the visual stimulation I was hoping to create for my final project. Ultimately, I am very happy with how simple and easy it is to navigate through user interactions, yet how much more visually novel and complicated the website looks upon its initial launch.
+I completely redid the visual styling from my FP3 prototype. While I had most of the algorithms in place for this website by FP3, including local storage, chroma.js color generation, and multipage functionality, there were two huge problems I had to face. The first problem was my initial problems with Bootstrap, a lot of conflicting aliasing was happening with Bootstrap's library and p5.js's interface due to how p5.js renders its own canvas that already automatically shifts with dynamic screen sizing. The second problem, while my FP3 design iteration had a clear callback to Pantone paint card swatches as its design inspiration, I felt that it did not truly convey my current art practice and my abilities as a designer. Therefore, I kept all of the necessary algorithms, got rid of Bootstrap entirely, and redid the entire design while still keeping the grid inspiration for my color generation page. I wanted the website to look more like early Y2k inspired gaming systems and also like the patchwork you see on jeans and a lot of textiles during this time. Therefore, I changed the font, created my own cuter organic shapes, and added a lot more generative and animated aspects to the website to properly reflect the visual stimulation I was hoping to create for my final project. Ultimately, I am very happy with how simple and easy it is to navigate through user interactions, yet how much more visually novel and complicated the website looks upon its initial launch.
 
 ## Part 5: Implementation Challenge
 
@@ -54,9 +65,8 @@ The most challenging part of implementation for me was including accessibility f
 
 ## Part 6: Generative AI Use and Reflection
 
-For the following aspects of your project, edit the corresponding table cell to answer:
-- *Usage*: Whether you used / did not use this tool for the aspect. Enter [Yes/No]
-- *Productivity*: Give a rating on whether this tool makes your productivity for X aspect [1-Much Reduced, 2-Reduced, 3-Slightly Reduced, 4-Not Reduced nor Improved, 5-Slightly Improved, 6-Improved, 7-Much Improved].
+- *Usage*: Whether I used / did not use this tool for the aspect.
+- *Productivity*: How this tool affected my productivity for each aspect [1-Much Reduced, 2-Reduced, 3-Slightly Reduced, 4-Not Reduced nor Improved, 5-Slightly Improved, 6-Improved, 7-Much Improved].
 
 | Tool Name | Ratings | design | plan | write code | debug | \_ (other?) |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -77,7 +87,7 @@ For the following aspects of your project, edit the corresponding table cell to 
 I used Perplexity Pro to help me find some interesting fonts and styling for my input box so that it would have the Y2k aesthetic I was looking for. I also used it to help me debug for accessibility and multi page functionality. Finally, I used it to help me create some super simple algorithms necessary for webstorage and my grid display. All of my conversations are logged below.
 
 > Pros and cons of using GenAI tools
-* Pros : I was able to get some simple algorithms and formatting for my website done quickly. This is usally programming that I would be able to do on my own but would take me significantly longer to write out and debug on my own. 
+* Pros : I was able to get some simple algorithms and formatting for my website done quickly. This is usually programming that I would be able to do on my own but would take me significantly longer to write out and debug on my own. 
 * Cons : The styling for a lot of the generated code is very generic unless you prompt the AI to look into interesting styles. Therefore, I choose my own fonts, blur filters, grain filters, and created my own shapes, but I simply used the AI to help me find interesting fonts or algorithms to help me do those steps without actually using the generated code. 
 
 ### Usage Log
@@ -104,24 +114,22 @@ I do not have my chat history from conversations before FP3, but Gen AI only hel
 
 ![FP3 Mid-fi Website](images/mid_UI_store.png)
 
-I have created an entirely new UI for my project that is inspired by pantone color swatches you might find at a local Home Depot or Lowe's. I hope this inspiration for the UI captures the practically of the website. Furthermore, it is an ultra simple design that utilizes rectangles very well so I can focus on implementing the necessary algorithms for this website including: local storage for keeping track of the most recent hex code entered and using this stored variable across all pages to recolor every aspect of the website, create a storage page for color swatches to be saved and refreshed, a color generation page where four different color palettes can be filtered through using the Chroma.js library, and finally mutli page functionality between mobile and desktop devices using Bootstrap. 
+I have created an entirely new UI for my project that is inspired by pantone color swatches you might find at a local Home Depot or Lowe's. I hope this inspiration for the UI captures the practicality of the website. Furthermore, it is an ultra simple design that utilizes rectangles very well so I can focus on implementing the necessary algorithms for this website including: local storage for keeping track of the most recent hex code entered and using this stored variable across all pages to recolor every aspect of the website, create a storage page for color swatches to be saved and refreshed, a color generation page where four different color palettes can be filtered through using the Chroma.js library, and finally multi page functionality between mobile and desktop devices using Bootstrap. 
 
 ## Implementation Plan Updates
 
 - [ ] Finish developing desktop version of the website, it is currently not resizing correctly
 - [ ] Make sure all animations including hover animations show up in desktop version
 - [ ] Add better animations between swatches page navigation back to library page navigation
-- [ ] Make sure all pages are centered properly acorss devices and clicking buttons are easy
-- [ ] Add all accessibility feattures including ARIA labels, tabbing functionality, and alt text
+- [ ] Make sure all pages are centered properly across devices and clicking buttons are easy
+- [ ] Add all accessibility features including ARIA labels, tabbing functionality, and alt text
 - [ ] Change UI to be more visually appealing if I have time
-- [ ] Simplify the entire code base and add clear commenting for documentaiton purposes
+- [ ] Simplify the entire code base and add clear commenting for documentation purposes
 
 ## Generative AI Use Plan Updates
 
 - [ ] Use AI to help me fix implementation conflicts between Bootstrap and p5.js library
 - [ ] Use AI to help me navigate any errors that may come up as I continue to work
-
-Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-generative-ai-use-and-reflection).
 
 ---
 
@@ -155,15 +163,15 @@ I created a version of the above sketches in Figma and made it interactive for u
 
 ![FP1 Mid-fi Prototype](images/Page_3.png)
 
-I implemeneted a homepage with a navigation and a short introduction, although it still seems a bit empty so this design may be iterated on a bit more further into the process of this project. I also layed out the circular designs that could engage the users throughout the navigation of the entire website and created a layout that would read well in a scrollable format. 
+I implemented a homepage with a navigation and a short introduction, although it still seems a bit empty so this design may be iterated on a bit more further into the process of this project. I also laid out the circular designs that could engage the users throughout the navigation of the entire website and created a layout that would read well in a scrollable format. 
 
 ## Feedback Summary
 
-Some of the feedback included making the website a scrolling based website that utilizes the circles as geometric animations to take users through the entire website. The overall design of the website was very clean and the design was simple, according to users the contrast was good and the visual styling was strong enough to accesible and intuitive. It was discussed to make the user experience as smooth and interesting with animations + colors as possible and possibly focus less on the API idea so as not to clog up the overall theme of the website. Finally, users felt the website felt a little incomplete and slideshow like due to the design of the homepage and suggested to add more assets such as a navigation bar and other similar functionalities. 
+Some of the feedback included making the website a scrolling based website that utilizes the circles as geometric animations to take users through the entire website. The overall design of the website was very clean and the design was simple, according to users the contrast was good and the visual styling was strong enough to be accessible and intuitive. It was discussed to make the user experience as smooth and interesting with animations + colors as possible and possibly focus less on the API idea so as not to clog up the overall theme of the website. Finally, users felt the website felt a little incomplete and slideshow like due to the design of the homepage and suggested to add more assets such as a navigation bar and other similar functionalities. 
 
 ## Milestones
 
-I hope to continue prototyping a bit more on the homepage specificially this week and start to build out each page's overall structure in HTML by the end of this week. After that, I will take my work flow over to P5.js in the next week and try to finish all the animation and color picker logic. Then I will simply do some finishing touches in order to port everything and organize the separate parts utilizing Javascript/JSON, test for multimodal screen functionality using Bootstrap, and do some accessibility testing. 
+I hope to continue prototyping a bit more on the homepage specifically this week and start to build out each page's overall structure in HTML by the end of this week. After that, I will take my work flow over to P5.js in the next week and try to finish all the animation and color picker logic. Then I will simply do some finishing touches in order to port everything and organize the separate parts utilizing Javascript/JSON, test for multimodal screen functionality using Bootstrap, and do some accessibility testing. 
 
 ### *Implementation Plan*
 
@@ -178,7 +186,7 @@ I hope to continue prototyping a bit more on the homepage specificially this wee
 - [ ] Week 13 Nov 25 \- Nov 29: port everything together, format using Javascript and Bootstrap
 
   - [ ] Thanksgiving  
-- [ ] Week 14 Dec 2 \- Dec 6: do any remainder finishing touches and some more usability testing for error handling
+- [ ] Week 14 Dec 2 \- Dec 6: do any remaining finishing touches and some more usability testing for error handling
   - [ ] FP4 due 
 
 ### *Libraries and Other Components*
@@ -188,11 +196,9 @@ I hope to continue prototyping a bit more on the homepage specificially this wee
 
 ## Generative AI Use Plan
 
-I may use Perplexity Pro to help me do error handling while coding in any of the various langauges while building out the overall website feel, and help with the math required for some of the color picker functionality. Finally, I may also ask for some help when doing CSS styling using flexbox and when using Bootstrap. 
+I may use Perplexity Pro to help me do error handling while coding in any of the various languages while building out the overall website feel, and help with the math required for some of the color picker functionality. Finally, I may also ask for some help when doing CSS styling using flexbox and when using Bootstrap. 
 
 ### *Tool Use*
-
-What would you use? Edit the list given your plan. For each tool, explain briefly on what do you expect Generative AI to help you with and what might it not be able to help you with.
 
 * Perplexity Pro
   * I will use it to help me with math since color pickers can become very computationally heavy to organize.
@@ -201,7 +207,7 @@ What would you use? Edit the list given your plan. For each tool, explain briefl
 
 ### *Responsible Use*
 
-I will minimize my use of Generative AI so as not to use too much enivronmental reasources during my project. I will only use it when absolutely necessary to do tricky math or error handling since that may be a time consuming task for me to do alone and AI can easily do this. I will not use it for the overall visual styling, textual theme, or overall feel of my website.
+I will minimize my use of Generative AI so as not to use too much environmental resources during my project. I will only use it when absolutely necessary to do tricky math or error handling since that may be a time consuming task for me to do alone and AI can easily do this. I will not use it for the overall visual styling, textual theme, or overall feel of my website.
 
 # **FP1 \- Proposal for Critique**
 
@@ -211,7 +217,7 @@ I will minimize my use of Generative AI so as not to use too much enivronmental 
 
 ![title for sketch1](images/sketch1.png)
 
-* I want to creative and interactive and narrative based website that explores the role of color from a cultural and visual perspective.
+* I want to create a creative, interactive, and narrative based website that explores the role of color from a cultural and visual perspective.
 * In order to do the above, I will use p5.js and Chroma.js to create a color picker tool and narrative elements, including poetry, literature,
 * and lyrics about the chosen color through APIs.
 * I will use alt text and clear explanations on screen about how to visually navigate my website, alongside how to save chosen colors, and the significance of the functionality. 
@@ -238,18 +244,18 @@ I will minimize my use of Generative AI so as not to use too much enivronmental 
 
 ## Feedback Summary
 
-The feedback I recieved was mainly in reguards to my first idea since that is the one I am most likely to choose. However, people did enjoy the third idea and said it
+The feedback I received was mainly in regards to my first idea since that is the one I am most likely to choose. However, people did enjoy the third idea and said it
 is interesting at a high level but a little out of scope for my current abilities and available time. For the first idea, many people said to include a homepage and clear
 instructional text at every step of the way since my tool is very exploratory and it might not be intuitive to users as to WHY they are using the tool (although the design
 is self explanatory and my peers said it would be easy to assume what the functionality is). Therefore, having a narrative style walkthrough with a strong landing page
 before the more visual elements are introduced was suggested and changing the formatting of the actual interactive color picker tools that I create in p5.js for mobile 
 devices versus laptop/desktop formatting was also discussed. It would also be nice to have a library that stores which colors users picked as another functionality.
-Finally, my peers enjoyed the idea of utilizing text as a supplementary visual element and the idea of using APIs to search for text that would be relevent to 
+Finally, my peers enjoyed the idea of utilizing text as a supplementary visual element and the idea of using APIs to search for text that would be relevant to 
 my project as the ending page. 
 
 ## Feedback Digestion
 
 I will definitely create a narrative style website instead of an entirely visual one, and focus on designing a strong landing page. I will also develop the API functionality
-if I have time. Both of these ideas were thought of by me in response to my peer's constructive critisms. I think I will also create a library of the colors that users pick,
+if I have time. Both of these ideas were thought of by me in response to my peers' constructive criticisms. I think I will also create a library of the colors that users pick,
 since that would make the overall functionality of the website better, however, I am not sure if I am completely tied to the idea yet since I am hoping to create a more 
 ephemeral feel to this project. 
